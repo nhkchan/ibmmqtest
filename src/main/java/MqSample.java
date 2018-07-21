@@ -8,7 +8,7 @@ public class MqSample {
 	private String qMgr;
 	
 	//public static String hostname = "192.210.166.46";
-	public static String hostname = "127.0.0.1";
+	public static String hostname = "192.168.64.1";
 	public static String channel = "DEV.ADMIN.SVRCONN";
 	public static String user = "admin";
 	public static String password = "passw0rd";
@@ -43,6 +43,7 @@ public class MqSample {
 			mqMsg.writeString("Hellow");
 			MQPutMessageOptions pmo = new MQPutMessageOptions();
 			System.out.println("PUT MQ Message");
+			System.out.println(mqMsg);
 			queue.put(mqMsg,pmo);
 			System.out.println("Close connection to Queue");
 			queue.close();
@@ -52,8 +53,6 @@ public class MqSample {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//Consume Message
-		 MqListen mql = new MqListen(null, null, null);
 	}
 	
 	
